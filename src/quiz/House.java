@@ -108,7 +108,7 @@ public class House {
         if(safetyCheck()) {
             this.size /= 2;
             this.price /= 2;
-            return new House(this.getSize(), this.getBathrooms(), this.getSize(), this.getPrice(), this.isPetFriendly());
+            return new House(this.getRooms(), this.getBathrooms(), this.getSize(), this.getPrice(), this.isPetFriendly());
         }
         return this;
     }
