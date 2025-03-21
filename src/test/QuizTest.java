@@ -8,6 +8,7 @@ import java.util.HashMap;
 import org.junit.Test;
 
 import quiz.*;
+import quiz2.*;
 
 public class QuizTest {
 
