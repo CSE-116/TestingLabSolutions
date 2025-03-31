@@ -1,17 +1,15 @@
 package test;
 
 import methods.*;
-import org.junit.Test;
 
-import java.lang.reflect.Method;
 import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class Tests {
+public class MethodTests {
 
-    @Test
+    @org.junit.Test
     public void testMethod1(){
         HashMap<LinkedListNode<Integer>, ArrayList<Integer>> map = new HashMap<>();
 
@@ -33,7 +31,7 @@ public class Tests {
         map.put(head,new ArrayList<>(List.of(5,8,10,100,0,-1,5)));
 
         Methods methods = new Methods();
-        Tests tests = new Tests();
+        MethodTests tests = new MethodTests();
 
         for(LinkedListNode<Integer> node : map.keySet()){
             LinkedListNode<Integer> actual = methods.IncreasingLinkedListNode(map.get(node));
@@ -54,7 +52,7 @@ public class Tests {
         return methodHelper(node1.getNext(),node2.getNext());
     }
 
-    @Test
+    @org.junit.Test
     public void testMethod2(){
         Methods methods = new Methods();
 
@@ -69,11 +67,12 @@ public class Tests {
         map.put(3,new ArrayList<>(List.of(1,1,1,1,1,1,2,2,2,2,3,3,3,3,2,2,2,1,1,1,1)));
 
         for(int key : map.keySet()){
-            assertEquals(key, methods.UniqueElementsInArrayList(map.get(key)));
+            int num = methods.UniqueElementsInArrayList(map.get(key));
+            assertEquals(key, num);
         }
     }
 
-    @Test
+    @org.junit.Test
     public void testMethod3(){
         Methods methods = new Methods();
 
@@ -122,11 +121,12 @@ public class Tests {
         map.put(4, map3);
 
         for(int num : map.keySet()){
-            assertEquals(num,methods.UniqueValuesInHashMap(map.get(num)));
+            int actual = methods.UniqueValuesInHashMap(map.get(num));
+            assertEquals(num,actual);
         }
     }
 
-    @Test
+    @org.junit.Test
     public void testMethod4(){
         Methods methods = new Methods();
 
@@ -141,11 +141,12 @@ public class Tests {
         map.put(new LinkedListNode<>("Hello", new LinkedListNode<>("World", null)), false);
 
         for(LinkedListNode<String> node : map.keySet()){
-            assertEquals(methods.OneNodeLinkedList(node), map.get(node));
+            boolean bool = methods.OneNodeLinkedList(node);
+            assertEquals(bool, map.get(node));
         }
     }
 
-    @Test
+    @org.junit.Test
     public void testMethod5(){
         Methods methods = new Methods();
         HashMap<Double, LinkedListNode<Integer>> map = new HashMap<>();
@@ -172,7 +173,8 @@ public class Tests {
         map.put(2.0, new LinkedListNode<>(-3, node5));
 
         for(double avg : map.keySet()){
-            assertEquals(avg, methods.AverageOfLinkedList(map.get(avg)),.001);
+            double actual = methods.AverageOfLinkedList(map.get(avg));
+            assertEquals(avg, actual,.001);
         }
     }
 }
